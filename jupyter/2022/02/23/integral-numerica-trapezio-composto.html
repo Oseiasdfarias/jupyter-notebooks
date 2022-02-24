@@ -146,9 +146,9 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h4"><a href="#Regra-dos-Trapézios-–-Definições">Regra dos Trapézios – Definições </a></li>
 <li class="toc-entry toc-h4"><a href="#Teorema">Teorema </a></li>
-<li class="toc-entry toc-h4"><a href="#Implementação-do-Algorítimo-com-Python">Implementação do Algorítimo com Python </a>
+<li class="toc-entry toc-h4"><a href="#Implementação-do-Algorítimo-em-Python">Implementação do Algorítimo em Python </a>
 <ul>
-<li class="toc-entry toc-h5"><a href="#Bibliotecas-Python">Bibliotecas Python </a></li>
+<li class="toc-entry toc-h5"><a href="#Biblioteca-Python">Biblioteca Python </a></li>
 <li class="toc-entry toc-h5"><a href="#Código--Python">Código  Python </a></li>
 <li class="toc-entry toc-h5"><a href="#Teste-1">Teste 1 </a></li>
 <li class="toc-entry toc-h5"><a href="#Teste-2">Teste 2 </a></li>
@@ -214,8 +214,8 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Implementação-do-Algorítimo-com-Python">
-<a class="anchor" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-com-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementação do Algorítimo com Python<a class="anchor-link" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-com-Python"> </a>
+<h4 id="Implementação-do-Algorítimo-em-Python">
+<a class="anchor" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-em-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementação do Algorítimo em Python<a class="anchor-link" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-em-Python"> </a>
 </h4>
 </div>
 </div>
@@ -223,10 +223,10 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Bibliotecas-Python">
-<a class="anchor" href="#Bibliotecas-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bibliotecas Python<a class="anchor-link" href="#Bibliotecas-Python"> </a>
+<h5 id="Biblioteca-Python">
+<a class="anchor" href="#Biblioteca-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Biblioteca Python<a class="anchor-link" href="#Biblioteca-Python"> </a>
 </h5>
-<p>Importando as Bibliotecas Python que serão usadas no código</p>
+<p>Importando as Biblioteca Python que será usada no código</p>
 
 </div>
 </div>
@@ -239,12 +239,6 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -322,6 +316,9 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
 <p>
 $$\int_{0}^{2} cos(x) \,dx$$
 </p>
+<p>
+$$\int_{a}^{b} cos(x) \,dx \approx \dfrac{1}{2}h(cos(x) + 2[cos(x_1) + cos(x_2) + \dots + cos(x_{n-1})] + cos(b))$$
+</p>
 <p><br></p>
 
 </div>
@@ -374,6 +371,9 @@ $$\int_{0}^{2} cos(x) \,dx$$
 <p>
 $$\int_{-1}^{2} 2 e^x \,dx$$
 </p>
+<p>
+$$\int_{a}^{b} 2 e^x \,dx \approx \dfrac{1}{2}h(2 e^a + 2[2 e^{x_1} + 2 e^{x_2} + \dots + 2 e^x_{n-1}] + 2 e^b)$$
+</p>
 <p><br></p>
 
 </div>
@@ -424,6 +424,9 @@ $$\int_{-1}^{2} 2 e^x \,dx$$
 <p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
 <p>
 $$\int_{0}^{6} x^2 \,dx$$
+</p>
+<p>
+$$\int_{a}^{b} x^2 \,dx \approx \dfrac{1}{2}h(a^2 + 2[x_1^2 + x_2^2 + \dots + x_{n-1}^2] + b^2)$$
 </p>
 <p><br></p>
 
