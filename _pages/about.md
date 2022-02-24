@@ -4,8 +4,5 @@ title: Sobre
 permalink: /about/
 ---
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
+Acadêmico de Engenharia Elétrica | Machine Learning & Deep Learning | Python | Drone UAVs
 
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
