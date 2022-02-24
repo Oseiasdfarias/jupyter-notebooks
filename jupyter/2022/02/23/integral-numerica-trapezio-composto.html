@@ -8,17 +8,19 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Integral Numérica - Método do Trapézio Composto" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Aqui você terá acesso aos Jupyter Notebooks das implementações dos algorítimos de cálculo numérico com Python." />
-<meta property="og:description" content="Aqui você terá acesso aos Jupyter Notebooks das implementações dos algorítimos de cálculo numérico com Python." />
-<link rel="canonical" href="https://oseiasdfarias.github.io/jupyter-notebooks/2022/02/23/integral-numerica-trapezio-composto.html" />
-<meta property="og:url" content="https://oseiasdfarias.github.io/jupyter-notebooks/2022/02/23/integral-numerica-trapezio-composto.html" />
+<meta name="description" content="vamos usar Método numérico para o cálculo de áreas de funções." />
+<meta property="og:description" content="vamos usar Método numérico para o cálculo de áreas de funções." />
+<link rel="canonical" href="https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html" />
+<meta property="og:url" content="https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html" />
 <meta property="og:site_name" content="Cálculo Numérico com Python" />
+<meta property="og:image" content="https://oseiasdfarias.github.io/jupyter-notebooks/images/chart-preview.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-02-23T00:00:00-06:00" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://oseiasdfarias.github.io/jupyter-notebooks/images/chart-preview.png" />
 <meta property="twitter:title" content="Integral Numérica - Método do Trapézio Composto" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-23T00:00:00-06:00","datePublished":"2022-02-23T00:00:00-06:00","description":"Aqui você terá acesso aos Jupyter Notebooks das implementações dos algorítimos de cálculo numérico com Python.","headline":"Integral Numérica - Método do Trapézio Composto","mainEntityOfPage":{"@type":"WebPage","@id":"https://oseiasdfarias.github.io/jupyter-notebooks/2022/02/23/integral-numerica-trapezio-composto.html"},"url":"https://oseiasdfarias.github.io/jupyter-notebooks/2022/02/23/integral-numerica-trapezio-composto.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-23T00:00:00-06:00","datePublished":"2022-02-23T00:00:00-06:00","description":"vamos usar Método numérico para o cálculo de áreas de funções.","headline":"Integral Numérica - Método do Trapézio Composto","image":"https://oseiasdfarias.github.io/jupyter-notebooks/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html"},"url":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/jupyter-notebooks/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://oseiasdfarias.github.io/jupyter-notebooks/feed.xml" title="Cálculo Numérico com Python" /><link rel="shortcut icon" type="image/x-icon" href="/jupyter-notebooks/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -89,16 +91,23 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Integral Numérica - Método do Trapézio Composto</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-23T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Integral Numérica - Método do Trapézio Composto</h1><p class="page-description">vamos usar Método numérico para o cálculo de áreas de funções.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-23T00:00:00-06:00" itemprop="datePublished">
         Feb 23, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      1 min read
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/jupyter-notebooks/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
     
 
     
@@ -132,7 +141,23 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Método-do-Trapézio-Composto">Método do Trapézio Composto </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Regra-dos-Trapézios-–-Definições">Regra dos Trapézios – Definições </a></li>
+<li class="toc-entry toc-h4"><a href="#Teorema">Teorema </a></li>
+<li class="toc-entry toc-h4"><a href="#Implementação-do-Algorítimo-com-Python">Implementação do Algorítimo com Python </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Importando-as-Bibliotecas-que-serão-usadas-no-código">Importando as Bibliotecas que serão usadas no código </a></li>
+<li class="toc-entry toc-h5"><a href="#Código-para-integração-numérica-usando-o-Método-do-Trapézio">Código para integração numérica usando o Método do Trapézio </a></li>
+<li class="toc-entry toc-h5"><a href="#Teste-1">Teste 1 </a></li>
+<li class="toc-entry toc-h5"><a href="#Teste-2">Teste 2 </a></li>
+<li class="toc-entry toc-h5"><a href="#Teste-3">Teste 3 </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -141,32 +166,38 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>vamos usar Método numérico para o cálculo de áreas de funções.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="M&#233;todo-do-Trap&#233;zio-Composto">M&#233;todo do Trap&#233;zio Composto<a class="anchor-link" href="#M&#233;todo-do-Trap&#233;zio-Composto"> </a></h3><h4 id="Regra-dos-Trap&#233;zios-&#8211;-Defini&#231;&#245;es">Regra dos Trap&#233;zios &#8211; Defini&#231;&#245;es<a class="anchor-link" href="#Regra-dos-Trap&#233;zios-&#8211;-Defini&#231;&#245;es"> </a></h4><blockquote><ul>
+<h3 id="Método-do-Trapézio-Composto">
+<a class="anchor" href="#M%C3%A9todo-do-Trap%C3%A9zio-Composto" aria-hidden="true"><span class="octicon octicon-link"></span></a>Método do Trapézio Composto<a class="anchor-link" href="#M%C3%A9todo-do-Trap%C3%A9zio-Composto"> </a>
+</h3>
+<h4 id="Regra-dos-Trapézios-–-Definições">
+<a class="anchor" href="#Regra-dos-Trap%C3%A9zios-%E2%80%93-Defini%C3%A7%C3%B5es" aria-hidden="true"><span class="octicon octicon-link"></span></a>Regra dos Trapézios – Definições<a class="anchor-link" href="#Regra-dos-Trap%C3%A9zios-%E2%80%93-Defini%C3%A7%C3%B5es"> </a>
+</h4>
+<blockquote>
+<ul>
 <li>Numericamente a regra dos trapézios é obtida aproximando-se f por um
 polinômio interpolador de 1° grau.</li>
 <li>Em seguida calcula-se a área do trapézio cuja base está sobre o eixo dos x.</li>
 </ul>
 </blockquote>
-<p><img src="https://github.com/Oseiasdfarias/jupyter-notebooks/blob/master/images/integ_trap.png?raw=true" alt="image" />
+<p><img src="https://github.com/Oseiasdfarias/jupyter-notebooks/blob/master/images/integ_trap.png?raw=true" alt="image">
 <a href="https://docs.ufpr.br/~volmir/MN_15_integracao_regra_trapezio_ppt.pdf">Origem: Pag(12)</a></p>
 <p><a href="https://docs.ufpr.br/~volmir/MN_15_integracao_regra_trapezio_ppt.pdf">Regra dos Trapézios – Dedução da Fórmula</a></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Teorema">Teorema<a class="anchor-link" href="#Teorema"> </a></h4><p>Se <strong>f</strong> for uma função continua em <strong>(a, b)</strong> onde <strong>a</strong> é o limite inferior de integração e <strong>b</strong> o limite superior de integração, A <strong>regra do Trapézio</strong> que podemos usar para aproximar $ \int_{a}^{b} f(x) \,dx $ é dada por:</p>
-<blockquote><p><strong>n</strong> intervalos – intervalos igualmente espaçados</p>
+<h4 id="Teorema">
+<a class="anchor" href="#Teorema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teorema<a class="anchor-link" href="#Teorema"> </a>
+</h4>
+<p>Se <strong>f</strong> for uma função continua em <strong>(a, b)</strong> onde <strong>a</strong> é o limite inferior de integração e <strong>b</strong> o limite superior de integração, A <strong>regra do Trapézio</strong> que podemos usar para aproximar $ \int_{a}^{b} f(x) \,dx $ é dada por:</p>
+<blockquote>
+<p><strong>n</strong> intervalos – intervalos igualmente espaçados</p>
 </blockquote>
 <p>
 $$h = \dfrac{b-a}{n}$$
@@ -174,21 +205,27 @@ $$h = \dfrac{b-a}{n}$$
 <p>
 $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots + f(x_{n-1})] + f(b))$$
 </p>
-<p><br /></p>
-<hr />
+<p><br></p>
+<hr>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Implementa&#231;&#227;o-do-Algor&#237;timo-com-Python">Implementa&#231;&#227;o do Algor&#237;timo com Python<a class="anchor-link" href="#Implementa&#231;&#227;o-do-Algor&#237;timo-com-Python"> </a></h2>
+<h4 id="Implementação-do-Algorítimo-com-Python">
+<a class="anchor" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-com-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementação do Algorítimo com Python<a class="anchor-link" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-com-Python"> </a>
+</h4>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Importando-as-Bibliotecas-que-ser&#227;o-usadas-no-c&#243;digo">Importando as Bibliotecas que ser&#227;o usadas no c&#243;digo<a class="anchor-link" href="#Importando-as-Bibliotecas-que-ser&#227;o-usadas-no-c&#243;digo"> </a></h4>
+<h5 id="Importando-as-Bibliotecas-que-serão-usadas-no-código">
+<a class="anchor" href="#Importando-as-Bibliotecas-que-ser%C3%A3o-usadas-no-c%C3%B3digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importando as Bibliotecas que serão usadas no código<a class="anchor-link" href="#Importando-as-Bibliotecas-que-ser%C3%A3o-usadas-no-c%C3%B3digo"> </a>
+</h5>
 </div>
 </div>
 </div>
@@ -215,14 +252,23 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="C&#243;digo-para-integra&#231;&#227;o-num&#233;rica-usando-o-M&#233;todo-do-Trap&#233;zio">C&#243;digo para integra&#231;&#227;o num&#233;rica usando o M&#233;todo do Trap&#233;zio<a class="anchor-link" href="#C&#243;digo-para-integra&#231;&#227;o-num&#233;rica-usando-o-M&#233;todo-do-Trap&#233;zio"> </a></h3><p>Onde:</p>
-<blockquote><ul>
-<li><strong>[a]</strong>  Limite inferior</li>
-<li><strong>[b]</strong> Limite superior</li>
-<li><strong>[n]</strong> sub-intervalos</li>
-<li><strong>[f ]</strong> função que será integrada</li>
+<h5 id="Código-para-integração-numérica-usando-o-Método-do-Trapézio">
+<a class="anchor" href="#C%C3%B3digo-para-integra%C3%A7%C3%A3o-num%C3%A9rica-usando-o-M%C3%A9todo-do-Trap%C3%A9zio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Código para integração numérica usando o Método do Trapézio<a class="anchor-link" href="#C%C3%B3digo-para-integra%C3%A7%C3%A3o-num%C3%A9rica-usando-o-M%C3%A9todo-do-Trap%C3%A9zio"> </a>
+</h5>
+<p>Onde:</p>
+<blockquote>
+<ul>
+<li>
+<strong>[a]</strong>  Limite inferior</li>
+<li>
+<strong>[b]</strong> Limite superior</li>
+<li>
+<strong>[n]</strong> sub-intervalos</li>
+<li>
+<strong>[f ]</strong> função que será integrada</li>
 </ul>
 </blockquote>
 
@@ -251,7 +297,7 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
     <span class="n">f_b</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
     <span class="n">integral_trap</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">/</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">f_a</span> <span class="o">+</span> <span class="n">somatorio</span> <span class="o">+</span> <span class="n">f_b</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Integral Trapézio ≈ </span><span class="si">{</span><span class="n">integral_trap</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Integral Trapézio ≈ </span><span class="si">{</span><span class="n">integral_trap</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     
 </pre></div>
 
@@ -262,14 +308,18 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<h5 id="Teste-1">Teste 1<a class="anchor-link" href="#Teste-1"> </a></h5><p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
+<hr>
+<h5 id="Teste-1">
+<a class="anchor" href="#Teste-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teste 1<a class="anchor-link" href="#Teste-1"> </a>
+</h5>
+<p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
 <p>
 $$\int_{0}^{2} cos(x) \,dx$$
 </p>
-<p><br /></p>
+<p><br></p>
 
 </div>
 </div>
@@ -310,14 +360,18 @@ $$\int_{0}^{2} cos(x) \,dx$$
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<h5 id="Teste-2">Teste 2<a class="anchor-link" href="#Teste-2"> </a></h5><p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
+<hr>
+<h5 id="Teste-2">
+<a class="anchor" href="#Teste-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teste 2<a class="anchor-link" href="#Teste-2"> </a>
+</h5>
+<p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
 <p>
 $$\int_{-1}^{2} 2 e^x \,dx$$
 </p>
-<p><br /></p>
+<p><br></p>
 
 </div>
 </div>
@@ -357,14 +411,18 @@ $$\int_{-1}^{2} 2 e^x \,dx$$
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<h5 id="Teste-3">Teste 3<a class="anchor-link" href="#Teste-3"> </a></h5><p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
+<hr>
+<h5 id="Teste-3">
+<a class="anchor" href="#Teste-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teste 3<a class="anchor-link" href="#Teste-3"> </a>
+</h5>
+<p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
 <p>
 $$\int_{0}^{6} x^2 \,dx$$
 </p>
-<p><br /></p>
+<p><br></p>
 
 </div>
 </div>
@@ -408,7 +466,15 @@ $$\int_{0}^{6} x^2 \,dx$$
 
 
 
-  </div><a class="u-url" href="/jupyter-notebooks/2022/02/23/integral-numerica-trapezio-composto.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Oseiasdfarias/jupyter-notebooks"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html" hidden></a>
 </article>
 
       </div>
