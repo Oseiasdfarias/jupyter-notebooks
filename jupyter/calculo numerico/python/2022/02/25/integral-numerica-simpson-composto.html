@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -150,16 +150,19 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h3"><a href="#Método-de-Simpson-Composto">Método de Simpson Composto </a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#Equação">Equação </a></li>
-<li class="toc-entry toc-h4"><a href="#Implementação-do-Algorítimo-em-Python">Implementação do Algorítimo em Python </a>
+<li class="toc-entry toc-h4"><a href="#Formulação-do-Método">Formulação do Método </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Implementação-do-Algorítimo-em-Python">Implementação do Algorítimo em Python </a>
 <ul>
 <li class="toc-entry toc-h5"><a href="#Biblioteca-Python">Biblioteca Python </a></li>
 <li class="toc-entry toc-h5"><a href="#Código--Python">Código  Python </a></li>
 <li class="toc-entry toc-h5"><a href="#Exemplo-01:-Solução-da-integral">Exemplo 01: Solução da integral </a></li>
+<li class="toc-entry toc-h5"><a href="#Código">Código </a></li>
 <li class="toc-entry toc-h5"><a href="#Exemplo-02:-Solução-da-integral">Exemplo 02: Solução da integral </a></li>
+<li class="toc-entry toc-h5"><a href="#Código">Código </a></li>
 <li class="toc-entry toc-h5"><a href="#Exemplo-03:-Solução-da-integral">Exemplo 03: Solução da integral </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h5"><a href="#Código">Código </a></li>
 </ul>
 </li>
 </ul><!--
@@ -177,6 +180,11 @@ window.onload = wrap_img;
 <h3 id="Método-de-Simpson-Composto">
 <a class="anchor" href="#M%C3%A9todo-de-Simpson-Composto" aria-hidden="true"><span class="octicon octicon-link"></span></a>Método de Simpson Composto<a class="anchor-link" href="#M%C3%A9todo-de-Simpson-Composto"> </a>
 </h3>
+<blockquote>
+<blockquote>
+<p><em>A regra de Simpson baseia-se em aproximar a integral definida pela área sob arcos de parábola que interpolam a função.</em> <a target="_blank" href="https://pt.wikipedia.org/wiki/F%C3%B3rmula_de_Simpson">Origem: Wikipédia</a></p>
+</blockquote>
+</blockquote>
 <p><img src="https://github.com/Oseiasdfarias/jupyter-notebooks/blob/master/images/Composite_Simpsons_rule.png?raw=true" alt="image"></p>
 
 </div>
@@ -185,12 +193,12 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Equação">
-<a class="anchor" href="#Equa%C3%A7%C3%A3o" aria-hidden="true"><span class="octicon octicon-link"></span></a>Equação<a class="anchor-link" href="#Equa%C3%A7%C3%A3o"> </a>
+<h4 id="Formulação-do-Método">
+<a class="anchor" href="#Formula%C3%A7%C3%A3o-do-M%C3%A9todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formulação do Método<a class="anchor-link" href="#Formula%C3%A7%C3%A3o-do-M%C3%A9todo"> </a>
 </h4>
 <blockquote>
-<p><strong>n</strong> intervalos – intervalos igualmente espaçados\
-OBS:A medida que o valor de <strong>n</strong> aumenta a integração de <strong>f(x)</strong> tente ao valor real 
+<p><strong>n</strong> intervalos igualmente espaçados</p>
+<p>OBS:A medida que o valor de <strong>n</strong> aumenta a integração de <strong>f(x)</strong> tente ao valor real 
 
 $$h = \dfrac{x_m - x_0}{n}$$
 </p>
@@ -214,9 +222,9 @@ $${\displaystyle {\begin{aligned}\int _{a}^{b}f(x)\,dx&amp;\approx {\frac {h}{3}
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Implementação-do-Algorítimo-em-Python">
+<h3 id="Implementação-do-Algorítimo-em-Python">
 <a class="anchor" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-em-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementação do Algorítimo em Python<a class="anchor-link" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-em-Python"> </a>
-</h4>
+</h3>
 </div>
 </div>
 </div>
@@ -260,7 +268,8 @@ $${\displaystyle {\begin{aligned}\int _{a}^{b}f(x)\,dx&amp;\approx {\frac {h}{3}
 <ul>
 <li>$[x_0]$ Limite inferior</li>
 <li>$[x_m]$ Limite superior</li>
-<li>$[ n ]$ sub-intervalos - OBS:Tem que ser um valor PAR&gt; + $[ f ]$ função que será integrada</li>
+<li>$[ f ]$ função que será integrada</li>
+<li>$[ n ]$ sub-intervalos - OBS:Tem que ser um valor PAR</li>
 </ul>
 </blockquote>
 
@@ -298,7 +307,7 @@ $${\displaystyle {\begin{aligned}\int _{a}^{b}f(x)\,dx&amp;\approx {\frac {h}{3}
         <span class="n">x</span> <span class="o">+=</span> <span class="n">h</span>
 
     <span class="n">integral</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">/</span><span class="mf">3.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">f_x0</span> <span class="o">+</span> <span class="n">f_xm</span> <span class="o">+</span> <span class="n">somatorio</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">*************************** SOLUÇÃO ***************************</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">*************************** SAÍDA ***************************</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Integral               ≈ </span><span class="si">{</span><span class="n">integral</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Subintervalos [n]      = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Passo [h]              = </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -340,6 +349,15 @@ $$2[2x_2-e^{x_2} + 2x_4-e^{x_4}+ \dots + 2x_{m-2}-e^{x_{m-2}} ]\}$$
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Código">
+<a class="anchor" href="#C%C3%B3digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Código<a class="anchor-link" href="#C%C3%B3digo"> </a>
+</h5>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -365,7 +383,7 @@ $$2[2x_2-e^{x_2} + 2x_4-e^{x_4}+ \dots + 2x_{m-2}-e^{x_{m-2}} ]\}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-*************************** SOLUÇÃO ***************************
+*************************** SAÍDA ***************************
 
 	Integral               ≈ -2.840986767759475
 	Subintervalos [n]      = 10
@@ -410,6 +428,15 @@ $$2[cos(x_2) + cos(x_4)+ \dots + cos(x_{m-2}) ]\}$$
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Código">
+<a class="anchor" href="#C%C3%B3digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Código<a class="anchor-link" href="#C%C3%B3digo"> </a>
+</h5>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -435,7 +462,7 @@ $$2[cos(x_2) + cos(x_4)+ \dots + cos(x_{m-2}) ]\}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-*************************** SOLUÇÃO ***************************
+*************************** SAÍDA ***************************
 
 	Integral               ≈ 0.85381930324762
 	Subintervalos [n]      = 10
@@ -477,6 +504,15 @@ $$2[x_2^2 + x_4^2 + \dots + x_{m-2}^2 ]\}$$
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Código">
+<a class="anchor" href="#C%C3%B3digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Código<a class="anchor-link" href="#C%C3%B3digo"> </a>
+</h5>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -502,7 +538,7 @@ $$2[x_2^2 + x_4^2 + \dots + x_{m-2}^2 ]\}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-*************************** SOLUÇÃO ***************************
+*************************** SAÍDA ***************************
 
 	Integral               ≈ 3.2
 	Subintervalos [n]      = 10
