@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Integral Numérica - Método do Trapézio Composto" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="vamos usar Métodos numéricos para o cálculo da áreas de funções." />
-<meta property="og:description" content="vamos usar Métodos numéricos para o cálculo da áreas de funções." />
+<meta name="description" content="Usaremos o Método do Trapézio Composto para o cálculo da áreas de funções." />
+<meta property="og:description" content="Usaremos o Método do Trapézio Composto para o cálculo da áreas de funções." />
 <link rel="canonical" href="https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html" />
 <meta property="og:url" content="https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html" />
 <meta property="og:site_name" content="Cálculo Numérico com Python" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="https://oseiasdfarias.github.io/jupyter-notebooks/images/integ_trap.png" />
 <meta property="twitter:title" content="Integral Numérica - Método do Trapézio Composto" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-23T00:00:00-06:00","datePublished":"2022-02-23T00:00:00-06:00","description":"vamos usar Métodos numéricos para o cálculo da áreas de funções.","headline":"Integral Numérica - Método do Trapézio Composto","image":"https://oseiasdfarias.github.io/jupyter-notebooks/images/integ_trap.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html"},"url":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-23T00:00:00-06:00","datePublished":"2022-02-23T00:00:00-06:00","description":"Usaremos o Método do Trapézio Composto para o cálculo da áreas de funções.","headline":"Integral Numérica - Método do Trapézio Composto","image":"https://oseiasdfarias.github.io/jupyter-notebooks/images/integ_trap.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html"},"url":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/2022/02/23/integral-numerica-trapezio-composto.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/jupyter-notebooks/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://oseiasdfarias.github.io/jupyter-notebooks/feed.xml" title="Cálculo Numérico com Python" /><link rel="shortcut icon" type="image/x-icon" href="/jupyter-notebooks/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -91,7 +91,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Integral Numérica - Método do Trapézio Composto</h1><p class="page-description">vamos usar Métodos numéricos para o cálculo da áreas de funções.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-23T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Integral Numérica - Método do Trapézio Composto</h1><p class="page-description">Usaremos o Método do Trapézio Composto para o cálculo da áreas de funções.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-23T00:00:00-06:00" itemprop="datePublished">
         Feb 23, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -150,9 +150,6 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h5"><a href="#Biblioteca-Python">Biblioteca Python </a></li>
 <li class="toc-entry toc-h5"><a href="#Código--Python">Código  Python </a></li>
-<li class="toc-entry toc-h5"><a href="#Teste-1">Teste 1 </a></li>
-<li class="toc-entry toc-h5"><a href="#Teste-2">Teste 2 </a></li>
-<li class="toc-entry toc-h5"><a href="#Teste-3">Teste 3 </a></li>
 </ul>
 </li>
 </ul>
@@ -177,9 +174,9 @@ window.onload = wrap_img;
 </h4>
 <blockquote>
 <ul>
-<li>Numericamente a regra dos trapézios é obtida aproximando-se f por um
+<li>Numericamente a regra dos trapézios é obtida aproximando-se <strong>f(x)</strong> por um
 polinômio interpolador de 1° grau.</li>
-<li>Em seguida calcula-se a área do trapézio cuja base está sobre o eixo dos x.</li>
+<li>Em seguida calcula-se a área do trapézio cuja base está sobre o eixo dos <strong>x</strong>.</li>
 </ul>
 </blockquote>
 <p><img src="https://github.com/Oseiasdfarias/jupyter-notebooks/blob/master/images/integ_trap.png?raw=true" alt="image"></p>
@@ -197,13 +194,16 @@ polinômio interpolador de 1° grau.</li>
 </h4>
 <p>Se <strong>f</strong> for uma função continua em <strong>(a, b)</strong> onde <strong>a</strong> é o limite inferior de integração e <strong>b</strong> o limite superior de integração, A <strong>regra do Trapézio composta</strong> que podemos usar para aproximar $ \int_{a}^{b} f(x) \,dx $ é dada por:</p>
 <blockquote>
-<p><strong>n</strong> intervalos – intervalos igualmente espaçados</p>
+<p><strong>n</strong>:Intervalos Igualmente Espaçados</p>
 </blockquote>
 <p>
 $$h = \dfrac{b-a}{n}$$
 </p>
 <p>
-$$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots + f(x_{n-1})] + f(b))$$
+$$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) +$$
+</p>
+<p>
+$$\dots + f(x_{n-1})] + f(b))$$
 </p>
 <p><br></p>
 <hr>
@@ -226,7 +226,7 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
 <h5 id="Biblioteca-Python">
 <a class="anchor" href="#Biblioteca-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Biblioteca Python<a class="anchor-link" href="#Biblioteca-Python"> </a>
 </h5>
-<p>Importando as Biblioteca Python que será usada no código</p>
+<p>Importando as Biblioteca Python que será usada no código.</p>
 
 </div>
 </div>
@@ -280,8 +280,9 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">integ_trap</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="c1"># O passo de integração, n é a quantidade de subintervalos que queremos</span>
+    <span class="c1"># O passo de integração, n é a quantidade de subintervalos que queremos.</span>
     <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    
     <span class="n">f_a</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     
     <span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
@@ -294,7 +295,14 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
     <span class="n">f_b</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
     <span class="n">integral_trap</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">/</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">f_a</span> <span class="o">+</span> <span class="n">somatorio</span> <span class="o">+</span> <span class="n">f_b</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Integral Trapézio ≈ </span><span class="si">{</span><span class="n">integral_trap</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">***************************'</span><span class="o">+</span><span class="s1">'</span><span class="se">\033</span><span class="s1">[1m'</span><span class="o">+</span> <span class="s1">' SAÍDA '</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\033</span><span class="s1">[0m'</span><span class="o">+</span><span class="s1">'***************************</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Integral               ≈ </span><span class="si">{</span><span class="n">integral_trap</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Subintervalos [n]      = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Passo [h]              = </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Limite Inferior [a]  = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Limite Superior [b]  = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">*************************************************************</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
     
 </pre></div>
 
@@ -309,15 +317,19 @@ $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{2}h(f(a) + 2[f(x_1) + f(x_2) + \dots 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h5 id="Teste-1">
-<a class="anchor" href="#Teste-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teste 1<a class="anchor-link" href="#Teste-1"> </a>
-</h5>
-<p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
+<ul>
+<li>##### Exemplo 1</li>
+</ul>
+<p>Aplicando o Método do Trapézio ao exemplo abaixo, temos:</p>
 <p>
 $$\int_{0}^{2} cos(x) \,dx$$
 </p>
+<p><br></p>
 <p>
-$$\int_{a}^{b} cos(x) \,dx \approx \dfrac{1}{2}h(cos(x) + 2[cos(x_1) + cos(x_2) + \dots + cos(x_{n-1})] + cos(b))$$
+$$\int_{a}^{b} cos(x) \,dx \approx \dfrac{1}{2}h(cos(x) + 2[cos(x_1) + cos(x_2) +$$
+</p>
+<p>
+$$\dots + cos(x_{n-1})] + cos(b))$$
 </p>
 <p><br></p>
 
@@ -349,7 +361,17 @@ $$\int_{a}^{b} cos(x) \,dx \approx \dfrac{1}{2}h(cos(x) + 2[cos(x_1) + cos(x_2) 
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Integral Trapézio ≈ 0.9092891038599877
+<pre>
+***************************<span class="ansi-bold"> SAÍDA </span>***************************
+
+	Integral               ≈ 0.9092891038599877
+	Subintervalos [n]      = 100000
+	Passo [h]              = 2e-05
+	Limite Inferior [a]  = 0
+	Limite Superior [b]  = 2
+
+*************************************************************
+
 </pre>
 </div>
 </div>
@@ -364,15 +386,19 @@ $$\int_{a}^{b} cos(x) \,dx \approx \dfrac{1}{2}h(cos(x) + 2[cos(x_1) + cos(x_2) 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h5 id="Teste-2">
-<a class="anchor" href="#Teste-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teste 2<a class="anchor-link" href="#Teste-2"> </a>
-</h5>
-<p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
+<ul>
+<li>##### Exemplo 2</li>
+</ul>
+<p>Aplicando o Método do Trapézio ao exemplo abaixo, temos:</p>
 <p>
-$$\int_{-1}^{2} 2 e^x \,dx$$
+$$\int_{0}^{2} 2x - e^x \,dx$$
+</p>
+<p><br></p>
+<p>
+$$\int_{a}^{b} 2 e^x \,dx \approx \dfrac{1}{2}h(2 e^a + 2[2 e^{x_1} + 2 e^{x_2} + $$
 </p>
 <p>
-$$\int_{a}^{b} 2 e^x \,dx \approx \dfrac{1}{2}h(2 e^a + 2[2 e^{x_1} + 2 e^{x_2} + \dots + 2 e^x_{n-1}] + 2 e^b)$$
+$$\dots + 2 e^x_{n-1}] + 2 e^b)$$
 </p>
 <p><br></p>
 
@@ -389,7 +415,7 @@ $$\int_{a}^{b} 2 e^x \,dx \approx \dfrac{1}{2}h(2 e^a + 2[2 e^{x_1} + 2 e^{x_2} 
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># Aplicando a integral usando o método do trapézio</span>
-<span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">integ_trap</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 </pre></div>
 
@@ -403,7 +429,17 @@ $$\int_{a}^{b} 2 e^x \,dx \approx \dfrac{1}{2}h(2 e^a + 2[2 e^{x_1} + 2 e^{x_2} 
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Integral Trapézio ≈ -4.0221934272473705
+<pre>
+***************************<span class="ansi-bold"> SAÍDA </span>***************************
+
+	Integral               ≈ -2.389733931446894
+	Subintervalos [n]      = 10000
+	Passo [h]              = 0.0002
+	Limite Inferior [a]  = 0
+	Limite Superior [b]  = 2
+
+*************************************************************
+
 </pre>
 </div>
 </div>
@@ -418,15 +454,19 @@ $$\int_{a}^{b} 2 e^x \,dx \approx \dfrac{1}{2}h(2 e^a + 2[2 e^{x_1} + 2 e^{x_2} 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h5 id="Teste-3">
-<a class="anchor" href="#Teste-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teste 3<a class="anchor-link" href="#Teste-3"> </a>
-</h5>
-<p>Aplicando o Método do Trapézio ao exemplo abaixo:</p>
+<ul>
+<li>##### Exemplo 2</li>
+</ul>
+<p>Aplicando o Método do Trapézio ao exemplo abaixo, temos:</p>
 <p>
-$$\int_{0}^{6} x^2 \,dx$$
+$$\int_{0}^{2} x^2 \,dx$$
+</p>
+<p><br></p>
+<p>
+$$\int_{a}^{b} x^2 \,dx \approx \dfrac{1}{2}h(a^2 + 2[x_1^2 + x_2^2 +$$
 </p>
 <p>
-$$\int_{a}^{b} x^2 \,dx \approx \dfrac{1}{2}h(a^2 + 2[x_1^2 + x_2^2 + \dots + x_{n-1}^2] + b^2)$$
+$$\dots + x_{n-1}^2] + b^2)$$
 </p>
 <p><br></p>
 
@@ -443,7 +483,7 @@ $$\int_{a}^{b} x^2 \,dx \approx \dfrac{1}{2}h(a^2 + 2[x_1^2 + x_2^2 + \dots + x_
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="c1"># Aplicando a integral usando o método do trapézio</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">integ_trap</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 </pre></div>
 
@@ -457,7 +497,17 @@ $$\int_{a}^{b} x^2 \,dx \approx \dfrac{1}{2}h(a^2 + 2[x_1^2 + x_2^2 + \dots + x_
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Integral Trapézio ≈ 72.00003599999896
+<pre>
+***************************<span class="ansi-bold"> SAÍDA </span>***************************
+
+	Integral               ≈ 2.666668000000003
+	Subintervalos [n]      = 1000
+	Passo [h]              = 0.002
+	Limite Inferior [a]  = 0
+	Limite Superior [b]  = 2
+
+*************************************************************
+
 </pre>
 </div>
 </div>

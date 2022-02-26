@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Integral Numérica - Método de Simpson Composto" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="vamos usar o Método de Simpson Composto para o cálculo da áreas de funções." />
-<meta property="og:description" content="vamos usar o Método de Simpson Composto para o cálculo da áreas de funções." />
+<meta name="description" content="Usaremos o Método de Simpson Composto para o cálculo da áreas de funções." />
+<meta property="og:description" content="Usaremos o Método de Simpson Composto para o cálculo da áreas de funções." />
 <link rel="canonical" href="https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/calculo%20numerico/python/2022/02/25/integral-numerica-simpson-composto.html" />
 <meta property="og:url" content="https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/calculo%20numerico/python/2022/02/25/integral-numerica-simpson-composto.html" />
 <meta property="og:site_name" content="Cálculo Numérico com Python" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="https://oseiasdfarias.github.io/jupyter-notebooks/images/Composite_Simpsons_rule.png" />
 <meta property="twitter:title" content="Integral Numérica - Método de Simpson Composto" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-25T00:00:00-06:00","datePublished":"2022-02-25T00:00:00-06:00","description":"vamos usar o Método de Simpson Composto para o cálculo da áreas de funções.","headline":"Integral Numérica - Método de Simpson Composto","image":"https://oseiasdfarias.github.io/jupyter-notebooks/images/Composite_Simpsons_rule.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/calculo%20numerico/python/2022/02/25/integral-numerica-simpson-composto.html"},"url":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/calculo%20numerico/python/2022/02/25/integral-numerica-simpson-composto.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-25T00:00:00-06:00","datePublished":"2022-02-25T00:00:00-06:00","description":"Usaremos o Método de Simpson Composto para o cálculo da áreas de funções.","headline":"Integral Numérica - Método de Simpson Composto","image":"https://oseiasdfarias.github.io/jupyter-notebooks/images/Composite_Simpsons_rule.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/calculo%20numerico/python/2022/02/25/integral-numerica-simpson-composto.html"},"url":"https://oseiasdfarias.github.io/jupyter-notebooks/jupyter/calculo%20numerico/python/2022/02/25/integral-numerica-simpson-composto.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/jupyter-notebooks/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://oseiasdfarias.github.io/jupyter-notebooks/feed.xml" title="Cálculo Numérico com Python" /><link rel="shortcut icon" type="image/x-icon" href="/jupyter-notebooks/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -91,7 +91,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Integral Numérica - Método de Simpson Composto</h1><p class="page-description">vamos usar o Método de Simpson Composto para o cálculo da áreas de funções.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-25T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Integral Numérica - Método de Simpson Composto</h1><p class="page-description">Usaremos o Método de Simpson Composto para o cálculo da áreas de funções.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-25T00:00:00-06:00" itemprop="datePublished">
         Feb 25, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -157,12 +157,9 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h5"><a href="#Biblioteca-Python">Biblioteca Python </a></li>
 <li class="toc-entry toc-h5"><a href="#Código--Python">Código  Python </a></li>
-<li class="toc-entry toc-h5"><a href="#Exemplo-01:-Solução-da-integral">Exemplo 01: Solução da integral </a></li>
-<li class="toc-entry toc-h5"><a href="#Código">Código </a></li>
-<li class="toc-entry toc-h5"><a href="#Exemplo-02:-Solução-da-integral">Exemplo 02: Solução da integral </a></li>
-<li class="toc-entry toc-h5"><a href="#Código">Código </a></li>
-<li class="toc-entry toc-h5"><a href="#Exemplo-03:-Solução-da-integral">Exemplo 03: Solução da integral </a></li>
-<li class="toc-entry toc-h5"><a href="#Código">Código </a></li>
+<li class="toc-entry toc-h5"><a href="#Exemplo-01">Exemplo 01 </a></li>
+<li class="toc-entry toc-h5"><a href="#Exemplo-02">Exemplo 02 </a></li>
+<li class="toc-entry toc-h5"><a href="#Exemplo-03:">Exemplo 03: </a></li>
 </ul>
 </li>
 </ul><!--
@@ -197,12 +194,11 @@ window.onload = wrap_img;
 <a class="anchor" href="#Formula%C3%A7%C3%A3o-do-M%C3%A9todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formulação do Método<a class="anchor-link" href="#Formula%C3%A7%C3%A3o-do-M%C3%A9todo"> </a>
 </h4>
 <blockquote>
-<p><strong>n</strong> intervalos igualmente espaçados</p>
-<p>OBS:A medida que o valor de <strong>n</strong> aumenta a integração de <strong>f(x)</strong> tente ao valor real 
-
+<p><strong>n</strong>:Intervalos Igualmente Espaçados&gt; OBS:A medida que o valor de <strong>n</strong> aumenta a integração de <strong>f(x)</strong> tende ao valor real</p>
+</blockquote>
+<p>
 $$h = \dfrac{x_m - x_0}{n}$$
 </p>
-</blockquote>
 <p>
 $$\int_{a}^{b} f(x) \,dx \approx \dfrac{1}{3}h\{[f(x_0) + f(x_m)] +4[f(x_1)+ $$
 
@@ -234,7 +230,7 @@ $${\displaystyle {\begin{aligned}\int _{a}^{b}f(x)\,dx&amp;\approx {\frac {h}{3}
 <h5 id="Biblioteca-Python">
 <a class="anchor" href="#Biblioteca-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Biblioteca Python<a class="anchor-link" href="#Biblioteca-Python"> </a>
 </h5>
-<p>Importando a Biblioteca Python que será usada no código</p>
+<p>Importando a Biblioteca Python que será usada no código.</p>
 
 </div>
 </div>
@@ -284,8 +280,8 @@ $${\displaystyle {\begin{aligned}\int _{a}^{b}f(x)\,dx&amp;\approx {\frac {h}{3}
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">metodo_simpson</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">x_m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="c1"># O passo de integração, n é a quantidade de subintervalos que queremos</span>
-    <span class="c1"># veridicando se [n] é PAR, condição necessária para o método simpson</span>
+    <span class="c1"># O passo de integração, n é a quantidade de subintervalos que queremos.</span>
+    <span class="c1"># veridicando se [n] é PAR, condição necessária para o método simpson.</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="k">2</span> != 0):
         <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
         
@@ -307,13 +303,13 @@ $${\displaystyle {\begin{aligned}\int _{a}^{b}f(x)\,dx&amp;\approx {\frac {h}{3}
         <span class="n">x</span> <span class="o">+=</span> <span class="n">h</span>
 
     <span class="n">integral</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">/</span><span class="mf">3.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">f_x0</span> <span class="o">+</span> <span class="n">f_xm</span> <span class="o">+</span> <span class="n">somatorio</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">*************************** SAÍDA ***************************</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">***************************'</span><span class="o">+</span><span class="s1">'</span><span class="se">\033</span><span class="s1">[1m'</span><span class="o">+</span> <span class="s1">' SAÍDA '</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\033</span><span class="s1">[0m'</span><span class="o">+</span><span class="s1">'***************************</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Integral               ≈ </span><span class="si">{</span><span class="n">integral</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Subintervalos [n]      = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Passo [h]              = </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Limite Inferior [x_0]  = </span><span class="si">{</span><span class="n">x_0</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Limite Superior [x_m]  = </span><span class="si">{</span><span class="n">x_m</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">                     *************************</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">*************************************************************</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
     
 </pre></div>
 
@@ -328,10 +324,10 @@ $${\displaystyle {\begin{aligned}\int _{a}^{b}f(x)\,dx&amp;\approx {\frac {h}{3}
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h5 id="Exemplo-01:-Solução-da-integral">
-<a class="anchor" href="#Exemplo-01:-Solu%C3%A7%C3%A3o-da-integral" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemplo 01: Solução da integral<a class="anchor-link" href="#Exemplo-01:-Solu%C3%A7%C3%A3o-da-integral"> </a>
+<h5 id="Exemplo-01">
+<a class="anchor" href="#Exemplo-01" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemplo 01<a class="anchor-link" href="#Exemplo-01"> </a>
 </h5>
-<p>Aplicando o Método de Simpsom Composto ao exemplo abaixo:</p>
+<p>Aplicando o Método de Simpsom Composto ao exemplo abaixo, temos:</p>
 <p>
 $$\int_{x_0}^{x_m} 2x-e^x \,dx$$
 </p>
@@ -352,9 +348,8 @@ $$2[2x_2-e^{x_2} + 2x_4-e^{x_4}+ \dots + 2x_{m-2}-e^{x_{m-2}} ]\}$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Código">
-<a class="anchor" href="#C%C3%B3digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Código<a class="anchor-link" href="#C%C3%B3digo"> </a>
-</h5>
+<p><strong>Código</strong></p>
+
 </div>
 </div>
 </div>
@@ -383,7 +378,7 @@ $$2[2x_2-e^{x_2} + 2x_4-e^{x_4}+ \dots + 2x_{m-2}-e^{x_{m-2}} ]\}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-*************************** SAÍDA ***************************
+***************************<span class="ansi-bold"> SAÍDA </span>***************************
 
 	Integral               ≈ -2.840986767759475
 	Subintervalos [n]      = 10
@@ -391,7 +386,7 @@ $$2[2x_2-e^{x_2} + 2x_4-e^{x_4}+ \dots + 2x_{m-2}-e^{x_{m-2}} ]\}$$
 	Limite Inferior [x_0]  = 0
 	Limite Superior [x_m]  = 2
 
-                     *************************
+*************************************************************
 
 </pre>
 </div>
@@ -407,10 +402,10 @@ $$2[2x_2-e^{x_2} + 2x_4-e^{x_4}+ \dots + 2x_{m-2}-e^{x_{m-2}} ]\}$$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h5 id="Exemplo-02:-Solução-da-integral">
-<a class="anchor" href="#Exemplo-02:-Solu%C3%A7%C3%A3o-da-integral" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemplo 02: Solução da integral<a class="anchor-link" href="#Exemplo-02:-Solu%C3%A7%C3%A3o-da-integral"> </a>
+<h5 id="Exemplo-02">
+<a class="anchor" href="#Exemplo-02" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemplo 02<a class="anchor-link" href="#Exemplo-02"> </a>
 </h5>
-<p>Aplicando o Método de Simpsom Composto ao exemplo abaixo:</p>
+<p>Aplicando o Método de Simpsom Composto ao exemplo abaixo, temos:</p>
 <p>
 $$\int_{a}^{b} cos(x) \,dx$$
 </p>
@@ -431,9 +426,8 @@ $$2[cos(x_2) + cos(x_4)+ \dots + cos(x_{m-2}) ]\}$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Código">
-<a class="anchor" href="#C%C3%B3digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Código<a class="anchor-link" href="#C%C3%B3digo"> </a>
-</h5>
+<p><strong>Código</strong></p>
+
 </div>
 </div>
 </div>
@@ -462,7 +456,7 @@ $$2[cos(x_2) + cos(x_4)+ \dots + cos(x_{m-2}) ]\}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-*************************** SAÍDA ***************************
+***************************<span class="ansi-bold"> SAÍDA </span>***************************
 
 	Integral               ≈ 0.85381930324762
 	Subintervalos [n]      = 10
@@ -470,7 +464,7 @@ $$2[cos(x_2) + cos(x_4)+ \dots + cos(x_{m-2}) ]\}$$
 	Limite Inferior [x_0]  = 0
 	Limite Superior [x_m]  = 2
 
-                     *************************
+*************************************************************
 
 </pre>
 </div>
@@ -486,10 +480,10 @@ $$2[cos(x_2) + cos(x_4)+ \dots + cos(x_{m-2}) ]\}$$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h5 id="Exemplo-03:-Solução-da-integral">
-<a class="anchor" href="#Exemplo-03:-Solu%C3%A7%C3%A3o-da-integral" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemplo 03: Solução da integral<a class="anchor-link" href="#Exemplo-03:-Solu%C3%A7%C3%A3o-da-integral"> </a>
+<h5 id="Exemplo-03:">
+<a class="anchor" href="#Exemplo-03:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemplo 03:<a class="anchor-link" href="#Exemplo-03:"> </a>
 </h5>
-<p>Aplicando o Método de Simpsom Composto ao exemplo abaixo:</p>
+<p>Aplicando o Método de Simpsom Composto ao exemplo abaixo, temos:</p>
 <p>
 $$\int_{a}^{b} x^2 \,dx$$
 </p>
@@ -507,9 +501,8 @@ $$2[x_2^2 + x_4^2 + \dots + x_{m-2}^2 ]\}$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Código">
-<a class="anchor" href="#C%C3%B3digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Código<a class="anchor-link" href="#C%C3%B3digo"> </a>
-</h5>
+<p><strong>Código</strong></p>
+
 </div>
 </div>
 </div>
@@ -538,7 +531,7 @@ $$2[x_2^2 + x_4^2 + \dots + x_{m-2}^2 ]\}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-*************************** SAÍDA ***************************
+***************************<span class="ansi-bold"> SAÍDA </span>***************************
 
 	Integral               ≈ 3.2
 	Subintervalos [n]      = 10
@@ -546,7 +539,7 @@ $$2[x_2^2 + x_4^2 + \dots + x_{m-2}^2 ]\}$$
 	Limite Inferior [x_0]  = 0
 	Limite Superior [x_m]  = 2
 
-                     *************************
+*************************************************************
 
 </pre>
 </div>
