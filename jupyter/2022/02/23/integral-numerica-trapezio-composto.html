@@ -146,12 +146,15 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h4"><a href="#Regra-dos-Trapézios-–-Definições">Regra dos Trapézios – Definições </a></li>
 <li class="toc-entry toc-h4"><a href="#Teorema">Teorema </a></li>
-<li class="toc-entry toc-h4"><a href="#Implementação-do-Algorítimo-em-Python">Implementação do Algorítimo em Python </a>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Implementação-do-Algorítimo-em-Python">Implementação do Algorítimo em Python </a>
 <ul>
 <li class="toc-entry toc-h5"><a href="#Biblioteca-Python">Biblioteca Python </a></li>
 <li class="toc-entry toc-h5"><a href="#Código--Python">Código  Python </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h5"><a href="#Exemplo-01">Exemplo 01 </a></li>
+<li class="toc-entry toc-h5"><a href="#Exemplo-02">Exemplo 02 </a></li>
+<li class="toc-entry toc-h5"><a href="#Exemplo-03">Exemplo 03 </a></li>
 </ul>
 </li>
 </ul><!--
@@ -192,7 +195,7 @@ polinômio interpolador de 1° grau.</li>
 <h4 id="Teorema">
 <a class="anchor" href="#Teorema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teorema<a class="anchor-link" href="#Teorema"> </a>
 </h4>
-<p>Se <strong>f</strong> for uma função continua em <strong>(a, b)</strong> onde <strong>a</strong> é o limite inferior de integração e <strong>b</strong> o limite superior de integração, A <strong>regra do Trapézio composta</strong> que podemos usar para aproximar $ \int_{a}^{b} f(x) \,dx $ é dada por:</p>
+<p>Se <strong>f(x)</strong> for uma função continua em <strong>(a, b)</strong> onde <strong>a</strong> é o limite inferior de integração e <strong>b</strong> o limite superior de integração, A <strong>regra do Trapézio composta</strong> que podemos usar para aproximar $ \int_{a}^{b} f(x) \,dx $ é dada por:</p>
 <blockquote>
 <p><strong>n</strong>:Intervalos Igualmente Espaçados</p>
 </blockquote>
@@ -214,9 +217,9 @@ $$\dots + f(x_{n-1})] + f(b))$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Implementação-do-Algorítimo-em-Python">
+<h3 id="Implementação-do-Algorítimo-em-Python">
 <a class="anchor" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-em-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementação do Algorítimo em Python<a class="anchor-link" href="#Implementa%C3%A7%C3%A3o-do-Algor%C3%ADtimo-em-Python"> </a>
-</h4>
+</h3>
 </div>
 </div>
 </div>
@@ -255,7 +258,7 @@ $$\dots + f(x_{n-1})] + f(b))$$
 <a class="anchor" href="#C%C3%B3digo--Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Código  Python<a class="anchor-link" href="#C%C3%B3digo--Python"> </a>
 </h5>
 <p>Código para integração numérica usando o Método do Trapézio.</p>
-<p>Onde:</p>
+<p><strong>Onde:</strong></p>
 <blockquote>
 <ul>
 <li>
@@ -317,9 +320,9 @@ $$\dots + f(x_{n-1})] + f(b))$$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<ul>
-<li>##### Exemplo 1</li>
-</ul>
+<h5 id="Exemplo-01">
+<a class="anchor" href="#Exemplo-01" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemplo 01<a class="anchor-link" href="#Exemplo-01"> </a>
+</h5>
 <p>Aplicando o Método do Trapézio ao exemplo abaixo, temos:</p>
 <p>
 $$\int_{0}^{2} cos(x) \,dx$$
@@ -332,6 +335,14 @@ $$\int_{a}^{b} cos(x) \,dx \approx \dfrac{1}{2}h(cos(x) + 2[cos(x_1) + cos(x_2) 
 $$\dots + cos(x_{n-1})] + cos(b))$$
 </p>
 <p><br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Código</strong></p>
 
 </div>
 </div>
@@ -386,9 +397,9 @@ $$\dots + cos(x_{n-1})] + cos(b))$$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<ul>
-<li>##### Exemplo 2</li>
-</ul>
+<h5 id="Exemplo-02">
+<a class="anchor" href="#Exemplo-02" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemplo 02<a class="anchor-link" href="#Exemplo-02"> </a>
+</h5>
 <p>Aplicando o Método do Trapézio ao exemplo abaixo, temos:</p>
 <p>
 $$\int_{0}^{2} 2x - e^x \,dx$$
@@ -401,6 +412,14 @@ $$\int_{a}^{b} 2 e^x \,dx \approx \dfrac{1}{2}h(2 e^a + 2[2 e^{x_1} + 2 e^{x_2} 
 $$\dots + 2 e^x_{n-1}] + 2 e^b)$$
 </p>
 <p><br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Código</strong></p>
 
 </div>
 </div>
@@ -454,9 +473,9 @@ $$\dots + 2 e^x_{n-1}] + 2 e^b)$$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<ul>
-<li>##### Exemplo 2</li>
-</ul>
+<h5 id="Exemplo-03">
+<a class="anchor" href="#Exemplo-03" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemplo 03<a class="anchor-link" href="#Exemplo-03"> </a>
+</h5>
 <p>Aplicando o Método do Trapézio ao exemplo abaixo, temos:</p>
 <p>
 $$\int_{0}^{2} x^2 \,dx$$
@@ -469,6 +488,14 @@ $$\int_{a}^{b} x^2 \,dx \approx \dfrac{1}{2}h(a^2 + 2[x_1^2 + x_2^2 +$$
 $$\dots + x_{n-1}^2] + b^2)$$
 </p>
 <p><br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Código</strong></p>
 
 </div>
 </div>
